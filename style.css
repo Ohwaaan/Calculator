@@ -1,0 +1,20 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 800px
+}
+
+.calculator{
+
+}
+
+.row{
+    display: flex;
+}
+
+.input{
+    padding: 32px;
+    margin: 1px;
+
+}
