@@ -35,3 +35,5 @@ function operate(left, right, operator)
         return divide(left,right);
 }
 
+let one = document.querySelector('.one')
+one.addEventListener('click', function(){console.log('sdfsdf')})
