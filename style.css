@@ -6,7 +6,9 @@ body{
 }
 
 .calculator{
-
+    border: solid black 3px;
+    padding:8px;
+    background-color: grey;
 }
 
 .row{
@@ -14,7 +16,20 @@ body{
 }
 
 .input{
-    padding: 32px;
-    margin: 1px;
+    font-size: 24px;
+    margin: 5px;
+    width: 90px;
+    height: 90px;
+    border: solid 3px black;
+}
 
+p{
+    background-color: orange;
+    margin:8px 5px 8px 5px;
+    height: 64px;
+    border:  solid black 3px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 24px;
 }
