@@ -23,7 +23,8 @@ let numbers      = document.querySelectorAll('.number');
 let displayValue = document.createElement('div');
 let result       = document.querySelector('p');
 let operators    = document.querySelectorAll('.operator');
-let equal        = document.querySelector('.equal');
+let equalButton  = document.querySelector('.equal');
+let clearButton  = document.querySelector('.clear')
 
 function printDisplayValue(num) {
     displayValue.textContent += num;
@@ -31,7 +32,11 @@ function printDisplayValue(num) {
 }
 
 function makeStringIntoFirst(){
-        first = Number(displayValue.textContent);
+    first = Number(displayValue.textContent);
+}
+
+function makeStringIntoSecond(){
+    second = Number(displayValue.textContent);
 }
 
 function clear(){
@@ -45,12 +50,28 @@ function operatorPressed(value){
     printDisplayValue(value);
 }
 
+function numberPressed(num){
+    if(displayValue.textContent === '+' ||displayValue.textContent === '*' ||displayValue.textContent === '/' ||displayValue.textContent === '-' ||displayValue.textContent === '=' )
+    {
+        operator = displayValue.textContent;
+        clear();
+    }
+    printDisplayValue(num);
+}
+
+function equalPressed(){
+    makeStringIntoSecond()
+    clear();
+    printDisplayValue(operate(first,second,operator))
+}
+
 for(let i = 0;i<numbers.length; i++){
-    numbers[i].addEventListener('click',   () => printDisplayValue(numbers[i].value))
+    numbers[i].addEventListener('click',   () => numberPressed(numbers[i].value))
 }
 
 for (let i = 0;i<operators.length;i++){
     operators[i].addEventListener('click', () => operatorPressed(operators[i].value))
 }
 
-equal.addEventListener('click', () => console.log(operate(first,1,'+')))
+equalButton.addEventListener('click', () => equalPressed())
+clearButton.addEventListener('click', () => clear())
